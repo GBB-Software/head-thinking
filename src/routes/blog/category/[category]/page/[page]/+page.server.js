@@ -2,7 +2,8 @@ import { redirect } from '@sveltejs/kit'
 import { postsPerPage } from '$lib/config'
 import fetchPosts from '$lib/assets/js/fetchPosts'
 
-export const load = async ({ url, params }) => {
+/** @/type {import('./$types').PageServerLoad} */
+export const load = async ({ url, params, fetch }) => {
   const page = params.page ? params.page : 1
   const { category } = params
 
@@ -13,7 +14,7 @@ export const load = async ({ url, params }) => {
   
   let offset = (page * postsPerPage) - postsPerPage
 
-  const totalPostsRes = await fetch(`${url.origin}/api/posts/count`)
+  const totalPostsRes = await fetch(`/api/posts/count`)
   const total = await totalPostsRes.json()
   const { posts } = await fetchPosts({ offset, page })
 

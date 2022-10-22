@@ -1,7 +1,7 @@
 import fetchPosts from '$lib/assets/js/fetchPosts'
 import { json } from '@sveltejs/kit'
 
-export const prerender = true
+export const prerender = 'auto'
 
 export const GET = async ({ params }) => {
 	const { category } = params

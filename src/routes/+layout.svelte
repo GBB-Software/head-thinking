@@ -13,7 +13,7 @@
 	const transitionIn = { delay: 150, duration: 150 }
 	const transitionOut = { duration: 100 }
 
-  export const prerender = true
+  export const prerender = 'auto'
 	
 	/**
 	 * Updates the global store with the current path. (Used for highlighting 

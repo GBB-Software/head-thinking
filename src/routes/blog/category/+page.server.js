@@ -1,5 +1,6 @@
-export const load = async ({ url }) => {
-	const res = await fetch(`${url.origin}/api/posts.json`)
+/** @/type {import('./$types').PageServerLoad} */
+export const load = async ({ url, fetch }) => {
+	const res = await fetch(`/api/posts.json`)
 	let posts = await res.json()
 
 	let uniqueCategories = {}
