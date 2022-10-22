@@ -29,7 +29,7 @@
 	 * own prefetch() calls here, too.
 	 **/
 	onMount(() => {
-		navItems.forEach(item => prefetch(item.route))
+		//navItems.forEach(item => prefetch(item.route))
 	})
 </script>
 
